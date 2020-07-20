@@ -25,6 +25,11 @@ int DecimaArchive::getVersion() {
 	return header.key;
 }
 
+int DecimaArchive::getFileTableCount() {
+	printf("File Table Count: %ld\n", (long)header.fileTableCount);
+	return header.fileTableCount;
+}
+
 DecimaArchive::~DecimaArchive() {
 }
 

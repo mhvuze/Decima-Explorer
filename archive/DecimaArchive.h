@@ -81,5 +81,6 @@ public:
 	int getVersion();
 	std::string getFilename();
 	int extractFile(uint32_t id, std::string output);
+	int getFileTableCount();
 	
 };

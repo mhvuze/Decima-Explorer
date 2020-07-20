@@ -2,6 +2,7 @@
 
 typedef enum CLI_COMMAND {
 	EXTRACT,
+	EXTRACT_ALL,
 	REPACK
 } CLI_COMMAND;
 
@@ -22,6 +23,7 @@ private:
 
 	//command methods
 	void extract(int id);
+	void extractAll();
 	void repack();
 
 	//cli methods
