@@ -263,6 +263,12 @@ int DecimaArchive::extractFile(uint32_t id, std::string output) {
 	}
 
 	DataBuffer data = extract(fileTable[i]);
-	if (!writeDataToFile(data, output)) return 0;
+	// Ignore wav files
+	if (data[0] == 0x52 && data[1] == 0x49 && data[2] == 0x46 && data[3] == 0x46) {
+		printf("%d is wav file, skipped.\n", id);
+	}
+	else {
+		if (!writeDataToFile(data, output)) return 0;
+	}
 	return 1;
 }
